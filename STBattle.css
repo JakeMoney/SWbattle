@@ -1,0 +1,59 @@
+.menuBackground
+{
+	background: url(menu.jpg);
+	position: absolute;
+	right: 0;
+	left: -400;
+	height: 900px;
+	width: auto;
+}
+
+#chooseSide
+{
+	float: left;
+	margin-left: 580px;
+	font-size: 4em;
+	color: white;
+}
+.lightText
+{
+	clear:both;
+	float: left;
+	margin-left: 470px;
+	font-size: 3em;
+	color: white;
+	text-shadow: blue 0 0 20px;
+}
+.darkText
+{
+	float: right;
+	margin-right: 0x;
+	font-size: 3em;
+	color: white;
+	text-shadow: red 0 0 20px;
+}
+
+.light
+{
+	background: url(light.jpg);
+	height: 100%;
+	background-size: cover;
+}
+
+.dark
+{
+	background: url(dark.jpg);
+	height: 100%;
+	background-size: cover;
+}
+
+a
+{
+	color: white;
+}
+
+a:hover
+{
+	color:black;
+	text-decoration: none;
+}
