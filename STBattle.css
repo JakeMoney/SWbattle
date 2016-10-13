@@ -88,6 +88,7 @@ a:hover
 	background: url(images/battleBackground.jpg);
 	height: 100%;
 	background-size: 100% 100%;
+	overflow: hidden;
 }
 
 .gameDescription{
@@ -254,14 +255,12 @@ a:hover
 
 .lightDisplay
 {
-	margin-left: 150px;
-	float: left;
+	text-align: left;
 }
 
 .darkDisplay
 {
-	margin-right: 150px;
-	float: right;
+	text-align: right;
 }
 
 .heroDisplayName
@@ -273,25 +272,22 @@ a:hover
 
 .heroDisplayImage img
 {
-	width: auto;
-	height: 325px;
+	height: 200px;
 	border-radius:15%;
 }
 
 .armyDisplayImage img
 {
-	width: auto;
-	height: 250px;
+	height: 150px;
 	border-radius:15%;
 }
 
 .gameUpdates
 {
+	display: inline-block;
     font-size: 20pt;
     color: white;
     width: 500px;
-    margin-left: 700px;
-    margin-top: 50px;
     text-align: center;
     background: #333333;
     opacity: .8;

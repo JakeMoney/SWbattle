@@ -168,40 +168,54 @@
 
 		<script type="text/ng-template" id="/battle.html">
 			<div class="battleScreen">
-				<div class = "gameUpdates">
+				<table style="width:100%">
+					<tr>
+						<td>
+							<div class = "lightDisplay">
 
-					{{curMessage}}
+								<div class = "heroDisplayName">{{light.hero.name}}</div>
+								<div class = "armyInfo">
+									Army Size:<span style = "color:red">{{lightLife}}</span> <br/>
+								</div>
+								<div class = "heroDisplayImage"><img src= {{light.hero.image}}></img></div>
 
-					<div ng-click = "usePower1()" class = "usepower">{{power1}}</div>
-					<div ng-click = "usePower2()" class = "usepower">{{power2}}</div>
-					<a href = "#/menu"><div ng-click = "usePower2()" class = "usepower">{{menulink}}</div></a>
+							</div>
+						</td>
+						<td colspan="2">
+							<div class = "darkDisplay">
 
-					<button class = "btn btn-primary" ng-click = "phase()">Attack</button>
+								<div class = "heroDisplayName">{{dark.hero.name}}</div>
+								<div class = "armyInfo">
+									Army Size: <span style = "color:red">{{darkLife}}</span> <br/>
+								</div>
+								<div class = "heroDisplayImage"><img src= {{dark.hero.image}}></img></div>
 
-				</div>
-				<div class = "lightDisplay">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 25%">
+							<div class = "armyDisplayImage"><img src = {{light.army.image}}></img></div>
+						</td>
+						<td style="text-align: center">
+							<div class = "gameUpdates">
 
+								{{curMessage}}
 
-					<div class = "heroDisplayName">{{light.hero.name}}</div>
-					<div class = "armyInfo">
-						Army Size:<span style = "color:red">{{lightLife}}</span> <br/>
-					</div>
-					<div class = "heroDisplayImage"><img src= {{light.hero.image}}></img></div>
-					<div class = "armyDisplayImage"><img src = {{light.army.image}}></img></div>
+								<div ng-click = "usePower1()" class = "usepower">{{power1}}</div>
+								<div ng-click = "usePower2()" class = "usepower">{{power2}}</div>
+								<a href = "#/menu"><div ng-click = "usePower2()" class = "usepower">{{menulink}}</div></a>
 
+								<button class = "btn btn-primary" ng-click = "phase()">Attack</button>
 
-				</div>
+							</div>
+						</td>
+						<td style="width: 25%; text-align:right">
+							<div class = "armyDisplayImage"><img src = {{dark.army.image}}></img></div>
+						</td>
+					</tr>
+				</table>
 
-				<div class = "darkDisplay">
-
-					<div class = "heroDisplayName">{{dark.hero.name}}</div>
-					<div class = "armyInfo">
-						Army Size: <span style = "color:red">{{darkLife}}</span> <br/>
-					</div>
-					<div class = "heroDisplayImage"><img src= {{dark.hero.image}}></img></div>
-					<div class = "armyDisplayImage"><img src = {{dark.army.image}}></img></div>
-
-				</div>
 			</div>
 		</script>
 
