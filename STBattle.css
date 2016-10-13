@@ -87,7 +87,6 @@ a:hover
 {
 	background: url(images/battleBackground.jpg);
 	height: 100%;
-	overflow: hidden;
 	background-size: 100% 100%;
 }
 
@@ -238,7 +237,7 @@ a:hover
 .myinput
 {
 	width: 300px;
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 	font-size: 14pt;
 }
 
@@ -256,14 +255,57 @@ a:hover
 .lightDisplay
 {
 	margin-left: 150px;
-	margin-top: 100px;
+	float: left;
 }
 
 .darkDisplay
 {
 	margin-right: 150px;
-	margin-top: 100px;
+	float: right;
 }
 
+.heroDisplayName
+{
+	color: white;
+	font-size: 3em;
+	margin-bottom: 20px;
+}
 
+.heroDisplayImage img
+{
+	width: auto;
+	height: 325px;
+	border-radius:15%;
+}
 
+.armyDisplayImage img
+{
+	width: auto;
+	height: 250px;
+	border-radius:15%;
+}
+
+.gameUpdates
+{
+    font-size: 20pt;
+    color: white;
+    width: 500px;
+    margin-left: 700px;
+    margin-top: 50px;
+    text-align: center;
+    background: #333333;
+    opacity: .8;
+    padding: 5px;
+    border-radius:5%;
+}
+
+.usepower
+{
+
+}
+
+.usepower:hover
+{
+	cursor:pointer;
+	color: purple;
+}

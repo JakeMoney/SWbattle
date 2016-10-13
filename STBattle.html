@@ -30,7 +30,7 @@
 									<a href ="#/prep">Light</a>
 								</div>
 							</td>
-							<td>								
+							<td>
 								<div class = "darkLink" ng-click="chooseDark()">
 									<a href ="#/prep">Dark</a>
 								</div>
@@ -168,25 +168,39 @@
 
 		<script type="text/ng-template" id="/battle.html">
 			<div class="battleScreen">
+				<div class = "gameUpdates">
+
+					{{curMessage}}
+
+					<div ng-click = "usePower1()" class = "usepower">{{power1}}</div>
+					<div ng-click = "usePower2()" class = "usepower">{{power2}}</div>
+					<a href = "#/menu"><div ng-click = "usePower2()" class = "usepower">{{menulink}}</div></a>
+
+					<button class = "btn btn-primary" ng-click = "phase()">Attack</button>
+
+				</div>
 				<div class = "lightDisplay">
 
-					<div class = "unitDisplayName">{{light.hero.name}}</div>
-					<div class = "unitDisplayImage"><img src= {{light.hero.image}}></img></div>
-					<div class = "unitDisplayImage"><img src = {{light.army.image}}></img></div>
+
+					<div class = "heroDisplayName">{{light.hero.name}}</div>
 					<div class = "armyInfo">
 						Army Size:<span style = "color:red">{{lightLife}}</span> <br/>
 					</div>
+					<div class = "heroDisplayImage"><img src= {{light.hero.image}}></img></div>
+					<div class = "armyDisplayImage"><img src = {{light.army.image}}></img></div>
+
 
 				</div>
 
 				<div class = "darkDisplay">
 
-					<div class = "unitDisplayName">{{dark.hero.name}}</div>
-					<div class = "unitDisplayImage"><img src= {{dark.hero.image}}></img></div>
-					<div class = "unitDisplayImage"><img src = {{dark.army.image}}></img></div>
+					<div class = "heroDisplayName">{{dark.hero.name}}</div>
 					<div class = "armyInfo">
 						Army Size: <span style = "color:red">{{darkLife}}</span> <br/>
 					</div>
+					<div class = "heroDisplayImage"><img src= {{dark.hero.image}}></img></div>
+					<div class = "armyDisplayImage"><img src = {{dark.army.image}}></img></div>
+
 				</div>
 			</div>
 		</script>

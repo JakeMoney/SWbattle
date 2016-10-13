@@ -1,4 +1,3 @@
-//TODO change hero powers in cur hero to be the actual object, not just a string.
 
 var varService = angular.module('varService',[]);
 var app = angular.module('STBattle', ['ui.router','varService']);
@@ -94,7 +93,7 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 3,
 				giveh: 0,
-				takeh: 1,
+				takeh: 10,
 				description: "The enemy soliders are terrified by your arrival.  They lose attack and some troops cower."
 			},
 			power2:{
@@ -102,7 +101,7 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 1,
 				giveh: 0,
-				takeh: 3,
+				takeh: 15,
 				description: "Use the force to push back all enemy soliders."
 			}
 		},
@@ -114,7 +113,7 @@ varService.service('gameVars', function()
 				name: "Force Heal",
 				gived: 0,
 				taked: 0,
-				giveh: 4,
+				giveh: 25,
 				takeh: 0,
 				description: "Use the force to heal wounded soliders"
 			},
@@ -122,7 +121,7 @@ varService.service('gameVars', function()
 				name: "Inspire",
 				gived: 2,
 				taked: 0,
-				giveh: 2,
+				giveh: 20,
 				takeh: 0,
 				description: "Inspire your soliders.  They gain more attack."
 			}
@@ -136,14 +135,14 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 3,
 				giveh: 0,
-				takeh: 1,
+				takeh: 10,
 				description: "The enemy soliders are terrified by your arrival.  They lose attack and some troops cower."
 			},
 			power2:{
 				name: "Inspire",
 				gived: 2,
 				taked: 0,
-				giveh: 2,
+				giveh: 20,
 				takeh: 0,
 				description: "Inspire your soliders.  They gain more attack."
 			}
@@ -157,7 +156,7 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 3,
 				giveh: 0,
-				takeh: 1,
+				takeh: 10,
 				description: "The enemy soliders are terrified by your arrival.  They lose attack and some troops cower."
 			},
 			power2:{
@@ -165,7 +164,7 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 0,
 				giveh: 0,
-				takeh: 4,
+				takeh: 30,
 				description: "Use the force to unleash devastation on the enemy soliders"
 			}
 		},
@@ -177,7 +176,7 @@ varService.service('gameVars', function()
 				name: "Inspire",
 				gived: 2,
 				taked: 0,
-				giveh: 2,
+				giveh: 20,
 				takeh: 0,
 				description: "Inspire your soliders.  They gain more attack."
 			},
@@ -186,7 +185,7 @@ varService.service('gameVars', function()
 				gived: 0,
 				taked: 1,
 				giveh: 0,
-				takeh: 3,
+				takeh: 15,
 				description: "Use the force to push back all enemy soliders."
 			}
 		},
@@ -198,7 +197,7 @@ varService.service('gameVars', function()
 				name: "Inspire",
 				gived: 2,
 				taked: 0,
-				giveh: 2,
+				giveh: 20,
 				takeh: 0,
 				description: "Inspire your soliders.  They gain more attack."
 			},
@@ -206,7 +205,7 @@ varService.service('gameVars', function()
 				name: "Force Heal",
 				gived: 0,
 				taked: 0,
-				giveh: 4,
+				giveh: 25,
 				takeh: 0,
 				description: "Use the force to heal wounded soliders"
 			}
@@ -234,7 +233,7 @@ varService.service('gameVars', function()
 			name: "Force Heal",
 			gived: 0,
 			taked: 0,
-			giveh: 4,
+			giveh: 25,
 			takeh: 0,
 			description: "Use the force to heal wounded soliders"
 		},
@@ -243,14 +242,14 @@ varService.service('gameVars', function()
 			gived: 0,
 			taked: 0,
 			giveh: 0,
-			takeh: 4,
+			takeh: 30,
 			description: "Use the force to unleash devastation on the enemy soliders"
 		},
 		Inspire: {
 			name: "Inspire",
 			gived: 2,
 			taked: 0,
-			giveh: 2,
+			giveh: 20,
 			takeh: 0,
 			description: "Inspire your soliders.  They gain more attack."
 		},
@@ -259,7 +258,7 @@ varService.service('gameVars', function()
 			gived: 0,
 			taked: 3,
 			giveh: 0,
-			takeh: 1,
+			takeh: 10,
 			description: "The enemy soliders are terrified by your arrival.  They lose attack and some troops cower."
 		},
 		ForceBlast: {
@@ -267,7 +266,7 @@ varService.service('gameVars', function()
 			gived: 0,
 			taked: 1,
 			giveh: 0,
-			takeh: 3,
+			takeh: 15,
 			description: "Use the force to push back all enemy soliders."
 		}
 	};
@@ -508,6 +507,9 @@ app.controller('battleCtrl', function($scope , gameVars)
 		control: "player"
 	};
 
+	$scope.side = gameVars.getCurForcChoice();
+	$scope.menulink = "";
+
 	var playerside = gameVars.getCurForcChoice();
 	if(playerside === "dark")
 	{
@@ -528,21 +530,109 @@ app.controller('battleCtrl', function($scope , gameVars)
 		};
 	}
 
+	$scope.curMessage = "start attacking to begin the battle!";
+	$scope.power1 = "";
+	$scope.power2 = "";
 	$scope.lightLife = ($scope.light.army.numbers * 10);
 	$scope.darkLife = ($scope.dark.army.numbers * 10);
+	$scope.test = 10;
 	var charges = 2;
 
-	var active = setTimeout(function()
+	$scope.phase = function()
 	{
+		$scope.curMessage = "";
 		$scope.lightLife = $scope.lightLife - $scope.dark.army.weapons;
 		$scope.darkLife = $scope.darkLife - $scope.light.army.weapons;
-		if($scope.lightLife < 100 && charges !== 0)
+		if($scope.lightLife < 0)
 		{
-			//TODO call function here to use an ability.  Make a var here equal to the return, that way it will pause the counter
-			charges = charges - 1;
+			$scope.lightLife =0;
 		}
-		//active();
-	}, 1000); //3 seconds
 
-	//active();
+		if($scope.darkLife < 0)
+		{
+			$scope.darkLife =0;
+		}
+
+		if($scope.darkLife ===0 ||$scope.lightLife ===0 )
+		{
+			$scope.curMessage = "Game over!"
+			$scope.menulink = "Return to Main Menu";
+		}
+		else if($scope.lightLife < 50 && charges !== 0)
+		{
+			$scope.curMessage = "Select an ability to use!";
+			$scope.power1 = $scope.curPlayer.hero.power1.name;
+			$scope.power2 = $scope.curPlayer.hero.power2.name;;
+			charges = charges - 1;
+			if($scope.darkLife ===0 ||$scope.lightLife ===0 )
+			{
+				$scope.curMessage = $scope.curMessage  + " Game over!"
+				$scope.menulink = "Return to Main Menu";
+			}
+			else
+			{
+				$scope.curMessage = $scope.curMessage  + " The battle continues!";
+			}
+		}
+		else
+		{
+			$scope.curMessage = $scope.curMessage  + " The battle continues!";
+		}
+
+	}
+
+	$scope.usePower1 = function()
+	{
+
+		$scope.curMessage = $scope.power1 + " used!";
+		$scope.power1 = "";
+		$scope.power2 = "";
+		usePower($scope.curPlayer.hero.power1,  $scope.side);
+	}
+
+	$scope.usePower2 = function()
+	{
+
+		$scope.curMessage = $scope.power2 + " used!";
+		$scope.power1 = "";
+		$scope.power2 = "";
+		usePower($scope.curPlayer.hero.power2, $scope.side);
+	}
+
+	var usePower = function(power, player)
+	{
+		if(player === "dark")
+		{
+			$scope.darkLife = $scope.darkLife + power.giveh;
+			$scope.lightLife = $scope.lightLife - power.takeh;
+			$scope.dark.army.weapons = $scope.dark.army.weapons + power.gived;
+			$scope.light.army.weapons = $scope.light.army.weapons - power.taked;
+			if($scope.lightLife < 0)
+			{
+				$scope.lightLife =0;
+			}
+
+			if($scope.darkLife < 0)
+			{
+				$scope.darkLife =0;
+			}
+		}
+		else
+		{
+			$scope.darkLife = $scope.darkLife - power.takeh;
+			$scope.lightLife = $scope.lightLife + power.giveh;
+			$scope.dark.army.weapons = $scope.dark.army.weapons - power.taked;
+			$scope.light.army.weapons = $scope.light.army.weapons + power.gived;
+			if($scope.lightLife < 0)
+			{
+				$scope.lightLife =0;
+			}
+
+			if($scope.darkLife < 0)
+			{
+				$scope.darkLife =0;
+			}
+		}
+	}
+
 });
