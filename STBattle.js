@@ -43,42 +43,42 @@ varService.service('gameVars', function()
 	var armies = {
 		CloneTroopers: {
 			name: "Clone Troopers",
-			image: "clones2.jpg",
+			image: "images/clones2.jpg",
 			side: "light",
 			weapons: 5,
 			numbers: 8
 		},
 		WookieWarriors: {
 			name: "Wookie Warriors",
-			image: "wookie.jpg",
+			image: "images/wookie.jpg",
 			side: "light",
 			weapons: 10,
 			numbers: 4
 		},
 		ConfederateDroids: {
 			name: "Confederate Droids",
-			image: "droid.jpg",
+			image: "images/droid.jpg",
 			side: "dark",
 			weapons: 6,
 			numbers: 6
 		},
 		MandalorianWarriors:{
 			name: "Mandalorian Warriors",
-			image: "Mandalorians.jpg",
+			image: "images/Mandalorians.jpg",
 			side: "dark",
 			weapons: 10,
 			numbers: 4
 		},
 		Rebels:{
 			name: "Rebels",
-			image: "rebel.jpg",
+			image: "images/rebel.jpg",
 			side: "light",
 			weapons: 6,
 			numbers: 8
 		},
 		Imperials:{
 			name: "Imperials",
-			image: "stormtroopers2.jpg",
+			image: "images/stormtroopers2.jpg",
 			side: "dark",
 			weapons: 10,
 			numbers: 5
@@ -87,7 +87,7 @@ varService.service('gameVars', function()
 	var heros = {
 		DarthVader : {
 			name: "Darth Vader",
-			image: "vader.jpg",
+			image: "images/vader.jpg",
 			side: "dark",
 			power1:{
 				name: "Looming Presence",
@@ -108,7 +108,7 @@ varService.service('gameVars', function()
 		},
 		LukeSkywalker :{
 			name: "Luke Skywalker",
-			image: "luke.jpg",
+			image: "images/luke.jpg",
 			side: "light",
 			power1: {
 				name: "Force Heal",
@@ -129,7 +129,7 @@ varService.service('gameVars', function()
 		},
 		GeneralGrevious :{
 			name: "General Grevious",
-			image: "grevious.jpg",
+			image: "images/grevious.jpg",
 			side: "dark",
 			power1: {
 				name: "Looming Presence",
@@ -150,7 +150,7 @@ varService.service('gameVars', function()
 		},
 		DarthMaul :{
 			name: "Darth Maul",
-			image: "maul.jpg",
+			image: "images/maul.jpg",
 			side: "dark",
 			power1: {
 				name: "Looming Presence",
@@ -171,7 +171,7 @@ varService.service('gameVars', function()
 		},
 		Yoda :{
 			name: "Yoda",
-			image: "yoda.jpg",
+			image: "images/yoda.jpg",
 			side: "light",
 			power1: {
 				name: "Inspire",
@@ -192,7 +192,7 @@ varService.service('gameVars', function()
 		},
 		ObiWan :{
 			name: "Obi Wan",
-			image: "kenobi.jpg",
+			image: "images/kenobi.jpg",
 			side: "light",
 			power1: {
 				name: "Inspire",
@@ -432,11 +432,11 @@ app.controller('armyCtrl',function($scope,gameVars)
 		{
 			if($scope.curSide === "dark")
 			{
-				$scope.newimage = "defaultbad.jpg";
+				$scope.newimage = "images/defaultbad.jpg";
 			}
 			else
 			{
-				$scope.newimage = "defaultgood.jpg";
+				$scope.newimage = "images/defaultgood.jpg";
 			}
 		}
 		else
@@ -475,11 +475,11 @@ app.controller('heroCtrl', function($scope, gameVars)
 		{
 			if($scope.curSide === "dark")
 			{
-				$scope.newimage = "defaultsith.jpg";
+				$scope.newimage = "images/defaultsith.jpg";
 			}
 			else
 			{
-				$scope.newimage = "defaultjedi.jpg";
+				$scope.newimage = "images/defaultjedi.jpg";
 			}
 		}
 		else

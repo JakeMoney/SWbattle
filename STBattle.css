@@ -1,25 +1,20 @@
 .menuBackground
 {
-	background: url(menu.jpg);
-	position: absolute;
-	right: 0;
-	left: -400;
-	height: 900px;
-	width: auto;
+	background: url(images/menu.jpg);
+	height: 100%;
+	overflow: hidden;
+	background-size: 100% 100%;
 }
 
 #chooseSide
 {
-	float: left;
-	margin-left: 580px;
+	text-align: center;
 	font-size: 4em;
 	color: white;
 }
 .lightText
 {
-	clear:both;
-	float: left;
-	margin-left: 470px;
+	text-align: left;
 	font-size: 3em;
 	color: white;
 	text-shadow: blue 0 0 20px;
@@ -29,8 +24,7 @@
 
 .darkText
 {
-	float: right;
-	margin-right: 0x;
+	text-align: right;
 	font-size: 3em;
 	color: white;
 	text-shadow: red 0 0 20px;
@@ -39,44 +33,44 @@
 .lightLink
 {
 	clear:both;
-	float: left;
-	margin-left: 470px;
+	text-align: left;
 	font-size: 3em;
 	color: white;
 	text-shadow: blue 0 0 20px;
 }
-
-.begin
-{
-	clear:both;
-	float: left;
-	margin-left: 750px;
-	font-size: 3em;
-	color: white;
-	text-shadow: purple 0 0 20px;
+.lightLink a:hover{
+	color: blue;
 }
 
 .darkLink
 {
-	float: right;
+	text-align: right;
 	margin-right: 0x;
 	font-size: 3em;
 	color: white;
 	text-shadow: red 0 0 20px;
 }
 
+.darkLink a:hover{
+	color: red;
+}
+
 .light
 {
-	background: url(light.jpg);
+	background: url(images/light.jpg);
 	height: 100%;
-	background-size: cover;
+	overflow: hidden;
+	background-size: 100% 100%;
+	margin: 0;
 }
 
 .dark
 {
-	background: url(dark.jpg);
+	background: url(images/dark.jpg);
 	height: 100%;
-	background-size: cover;
+	overflow: hidden;
+	background-size: 100% 100%;
+	margin: 0;
 }
 
 a
@@ -86,84 +80,120 @@ a
 
 a:hover
 {
-	color:black;
 	text-decoration: none;
 }
 
 .battleScreen
 {
-	background: url(battleBackground.jpg);
+	background: url(images/battleBackground.jpg);
 	height: 100%;
+	overflow: hidden;
 	background-size: 100% 100%;
 }
-/*NEW CODE below*/
 
-.heroDisplay
-{
-	float: left;
-	margin-left: 150px;
-	margin-top: 100px;
+.gameDescription{
+    font-size: 20pt;
+    color: white;
+    margin: 100px;
+    text-align: center;
+    background: #333333;
+    opacity: .8;
+    padding: 5px;
 }
 
-.lightDisplay
+/*prep page*/
+.beginButton
 {
-	float: left;
-	margin-left: 150px;
-	margin-top: 100px;
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	text-shadow: purple 0 0 20px;
 }
 
-.darkDisplay
+.beginButton a:hover
 {
-	float: right;
-	margin-right: 150px;
-	margin-top: 100px;
+	color: purple;
 }
 
-.heroDisplayName
+.table{
+	display: table;
+}
+
+.cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.unitDisplay
+{
+	text-align: center;
+	width: 50%;
+	height: 100%;
+}
+
+.unitDisplayName
 {
 	color: white;
 	font-size: 3em;
 	margin-bottom: 20px;
 }
 
-.heroDisplayImage img
+.unitDisplayImage img
 {
-	width: auto;
-	height: 400px;
-	border-radius:15%;
+	height: 300px;
+	border-radius: 15%;
 }
+
 .heroDisplayPower
 {
 	color: white;
 	font-size: 2.5em;
 }
-.armyDisplay
-{
-	float: right;
-	margin-right: 150px;
-	margin-top: 100px;
 
-}
-
-
-
-.armyDisplayName
-{
-	color: white;
-	font-size: 3em;
-	margin-bottom: 20px;
-}
 .armyInfo
 {
 	color: white;
 	font-size: 2.5em;
 }
 
-.armyDisplayImage img
+/*customization pages*/
+
+.customizeScreen
 {
-	width: auto;
-	height: 400px;
-	border-radius:15%;
+	background: url(images/stars.jpg);
+	height: 100%;
+	overflow: hidden;
+	background-size: 100% 100%;
+}
+
+.creationTitle
+{
+	font-size: 2em;
+}
+
+.creationInputs
+{
+	margin-top: 5px;
+}
+
+.armyCreation
+{
+	background-color: white;
+	border-radius:5%;
+	width: 350px;
+	height: 260px;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.abilityList
+{
+	background-color: white;
+	border-radius:5%;
+	width: 350px;
+	height: 650px;
+	padding: 10px 0px;
+	text-align: center;
 }
 
 .changebtn
@@ -173,40 +203,31 @@ a:hover
 
 .armyOption
 {
-	float: right;
-	clear:both;
-	margin-right: 700px;
-	color: white;
-	font-size: 1.7em;
-	border-radius:15%;
-	margin-bottom: 15px;
-	margin-top: 10px;
-
+    display: inline-block;
+    color: white;
+    font-size: 1.7em;
+    border-radius: 10%;
+    margin: 5px;
+    background: #4d004d;
+    text-align: center;
+    width: 48%;
 }
 
-.armyOptionImage:hover
-{
-	cursor:pointer;
+.armyOption:hover{
+	background: #1a001a;
 }
 
-.armyOptionImage img
+.armyOptionImage
 {
-	width: auto;
 	height: 200px;
+    max-width: 95%;
 	border-radius:15%;
+	display: inline-block;
 }
 
 .armyOptionName
 {
 
-}
-
-.customizeScreen
-{
-	background: url(stars.jpg);
-	height: 100%;
-	overflow: visible;
-	background-size: cover;
 }
 
 .cover
@@ -217,33 +238,8 @@ a:hover
 .myinput
 {
 	width: 300px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	margin-left: 20px;
-}
-
-.armyCreation
-{
-	position: absolute;
-	margin-left: 120px;
-	margin-top: 50px;
-	background-color: white;
-	border-radius:5%;
-	width: 350px;
-	height: 320px;
-
-}
-
-.abilityList
-{
-	position: absolute;
-	margin-left: 120px;
-	margin-top: 450px;
-	background-color: white;
-	border-radius:5%;
-	width: 350px;
-	height: 650px;
-
+	margin-bottom: 10px; 
+	font-size: 14pt;
 }
 
 .power
@@ -255,14 +251,19 @@ a:hover
 	font-size: 1.5em;
 }
 
-.creationTitle
+/*battle page*/
+
+.lightDisplay
 {
-	margin-top: 20px;
-	margin-left: 10px;
-	font-size: 2em;
+	margin-left: 150px;
+	margin-top: 100px;
 }
 
-.creationInputs
+.darkDisplay
 {
-	margin-top: 10px;
+	margin-right: 150px;
+	margin-top: 100px;
 }
+
+
+
