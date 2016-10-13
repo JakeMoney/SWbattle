@@ -23,10 +23,10 @@
 					<div id = "chooseSide">
 						Choose your side
 					</div>
-					<div class = "lightText" ng-click="chooseLight()">
+					<div class = "lightLink" ng-click="chooseLight()">
 						<a href ="#/prep">Light</a>
 					</div>
-					<div class = "darkText" ng-click="chooseDark()">
+					<div class = "darkLink" ng-click="chooseDark()">
 						<a href ="#/prep">Dark</a>
 					</div>
 				</div>
@@ -42,11 +42,11 @@
 					{{armyName}}
 					{{armySize}}
 				</div>
+			<a href = "#/army">go to army</a>
 			</div>
 
 
 
-			<a href = "#/army">go to army</a>
 		</script>
 
 		<script type="text/ng-template" id="/army.html">
@@ -60,8 +60,19 @@
 		</script>
 
 		<script type="text/ng-template" id="/battle.html">
-			battle
-			<a href = "#/menu">go to menu</a>
+			<div class="battleScreen">
+				<table style="width: 100%; height: 100">
+					<tr>
+						<td style="width: 50%; vertical-align: top">
+							<h2 class="lightText">Light</h2>
+						</td>
+						<td style="width: 50%; vertical-align: top">
+							<h2 class="darkText">Dark</h2>
+						</td>
+					</tr>
+				</table>
+				<a href = "#/menu">go to menu</a>
+			</div>
 		</script>
 
 		<script src = "STBattle.js"></script>

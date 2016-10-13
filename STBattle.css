@@ -6,6 +6,7 @@
 	left: -400;
 	height: 900px;
 	width: auto;
+	overflow: hidden;
 }
 
 #chooseSide
@@ -15,7 +16,24 @@
 	font-size: 4em;
 	color: white;
 }
+
 .lightText
+{
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	text-shadow: blue 0 0 20px;
+}
+
+.darkText
+{
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	text-shadow: red 0 0 20px;
+}
+
+.lightLink
 {
 	clear:both;
 	float: left;
@@ -24,7 +42,8 @@
 	color: white;
 	text-shadow: blue 0 0 20px;
 }
-.darkText
+
+.darkLink
 {
 	float: right;
 	margin-right: 0x;
@@ -38,6 +57,7 @@
 	background: url(light.jpg);
 	height: 100%;
 	background-size: cover;
+	overflow: hidden;
 }
 
 .dark
@@ -45,10 +65,10 @@
 	background: url(dark.jpg);
 	height: 100%;
 	background-size: cover;
+	overflow: hidden;
 }
 
-a
-{
+a{
 	color: white;
 }
 
@@ -56,4 +76,11 @@ a:hover
 {
 	color:black;
 	text-decoration: none;
+}
+
+.battleScreen{
+	background: url(battleBackground.jpg);
+	height: 100%;
+	overflow: hidden;
+	background-size: 100% 100%;
 }
